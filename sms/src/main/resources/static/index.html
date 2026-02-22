@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMS — Student Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+    <div class="logo">
+        <div class="logo-mark"><span>S</span> SMS</div>
+        <div class="logo-sub">arnav / v1.0.0</div>
+    </div>
+    <div class="nav-section">
+        <div class="nav-label">Management</div>
+        <div class="nav-item active" onclick="switchPage('dashboard')">
+            <span class="icon">⊞</span> Dashboard
+        </div>
+        <div class="nav-item" onclick="switchPage('students')">
+            <span class="icon">◎</span> Students
+            <span class="nav-badge" id="student-count">—</span>
+        </div>
+        <div class="nav-item" onclick="switchPage('courses')">
+            <span class="icon">⬡</span> Courses
+            <span class="nav-badge" id="course-count">—</span>
+        </div>
+        <div class="nav-item" onclick="switchPage('enrollments')">
+            <span class="icon">⟐</span> Enrollments
+            <span class="nav-badge" id="enrollment-count">—</span>
+        </div>
+    </div>
+    <div class="sidebar-footer">
+        <div class="status-dot">localhost:8080</div>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main" id="main-content"></main>
+
+<!-- TOAST CONTAINER -->
+<div class="toasts" id="toasts"></div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modal-title">Modal</div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-footer" id="modal-footer"></div>
+    </div>
+</div>
+
+<!-- SCRIPTS (order matters) -->
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/students.js"></script>
+<script src="js/courses.js"></script>
+<script src="js/enrollments.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
